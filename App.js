@@ -6,21 +6,17 @@ import { Video } from 'expo-av';
 export default function App() {
   const videoRef = useRef(null);
 
-  // Load fonts
+  
   let [fontsLoaded] = useFonts({
     PressStart2P_400Regular,
   });
-
-  // If fonts are not loaded, show a loading screen or null
-  if (!fontsLoaded) {
-    return null; // You might want to show a loading spinner or a placeholder here
+if (!fontsLoaded) {
+    return null; 
   }
 
-  // Local video file path
   const background = require('./assets/myvideo.mp4');
 
-  // Function to start the video automatically
-  const handleLoad = async () => {
+    const handleLoad = async () => {
     if (videoRef.current) {
       try {
         await videoRef.current.playAsync();
@@ -36,10 +32,10 @@ export default function App() {
         <Video
           source={background}
           ref={videoRef}
-          useNativeControls={false} // Hide controls
-          resizeMode="cover" // Adjust as needed
-          isLooping={true} // Enable looping
-          onLoad={handleLoad} // Automatically start the video when it's loaded
+          useNativeControls={false}
+          resizeMode="cover" 
+          isLooping={true} 
+          onLoad={handleLoad} 
           style={styles.backgroundVideo}
         />
       </View>
