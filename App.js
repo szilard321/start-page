@@ -39,16 +39,19 @@ if (!fontsLoaded) {
           style={styles.backgroundVideo}
         />
       </View>
-      <View style={styles.overlayContainer}>
-        <View style={styles.header}>
+      <View style={styles.overlayContainer} /*asta e pentru ca vid-ul sa fie in background*/ >     
+        <View style={styles.header}> 
           <View style={styles.buttonContainer}>
             <Pressable style={styles.button} onPress={() => Alert.alert("Button pressed")}>
-              <Text style={styles.textFont2}>Log</Text>
-            </Pressable>
+              <Text  /*pana aici e pentru buton, chenarul e strict pentru refrence */ style={styles.textFont2}>Head in!</Text>
+            </Pressable >
           </View>
-        </View>
-        <View style={styles.content}>
-          <Text style={styles.textFont1}>Sample</Text>
+        </View >
+        
+        <View  style={styles.header}>
+          <Text style={styles.textFont1}>pac-man?</Text>
+          </View>
+          <View style={styles.salut}>
           <Text style={styles.welcome}>Welcome!</Text>
         </View>
       </View>
@@ -80,38 +83,35 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'flex-end',
     width: '100%',
-    paddingTop: '6%',
+    paddingTop: '15%',
     paddingRight: '5%',
   },
   buttonContainer: {
     backgroundColor: 'black',
     padding: 10,
-    borderWidth: 1,
+    borderWidth: 2,
     borderColor: 'red',
     borderRadius: 5,
   },
-  button: {
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
+ 
   textFont1: {
     fontFamily: 'PressStart2P_400Regular',
     fontSize: 20,
-    textAlign: 'center',
+   textAlign: 'left',
     color: 'yellow',
   },
   textFont2: {
     fontFamily: 'PressStart2P_400Regular',
-    fontSize: 20,
+    fontSize: 15,
     textAlign: 'center',
     color: 'yellow',
   },
-  content: {
+  salut: {
     flex: 1,
-    justifyContent: 'center',
+    justifyContent: 'flex-end',
     alignItems: 'center',
     width: '100%',
-    padding: 10,
+    paddingLeft: '6%',
   },
   welcome: {
     fontFamily: 'PressStart2P_400Regular',
